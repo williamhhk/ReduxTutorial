@@ -12,7 +12,7 @@ export class CounterComponent implements OnInit {
     counter$: Observable<number>;
     constructor(private _store : Store<AppStore>)
     {
-        this.counter$ = _store.select('counter')       
+        this.counter$ = _store.select(store => store.counter) ;    
     }
 
     increment(){

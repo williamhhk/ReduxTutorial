@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from 'rxjs/Observable';
+import {Store} from '@ngrx/store'
+import {AppStore} from '../app.store'
+import { Item } from '../_models/item'
 
 @Component({
   selector: 'app-main-page',
@@ -7,13 +11,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
-
-  constructor() { }
+  items: Observable<Array<Item>>;
+  
+  constructor(
+    private _store : Store <AppStore>
+  ) { 
+      this.items = _store.select('items');
+    }
 
   ngOnInit() {
   }
 
-  onQueryHostName(hostname : string ) {
-    console.log("this is a test");
+  addClient(item : Item) {
+    console.log(item);
+    this._store.dispatch( { type : 'ADD_CLIENT', payload : { hostname : 'test.com', ipaddress : '1.1.1.1', queryType : 'A' }});
+    
+  }
+
+  selectedItem(item)
+  {
+    console.log(item);
   }
 }

@@ -1,4 +1,10 @@
 <h3>DNS Client Query</h3>
 
-<app-hostname-input   (queryHostName)="onQueryHostName($event)">
+<app-hostname-input   (queryHostName)="addClient($event)">
 </app-hostname-input>
+
+<app-items-list
+	[items]="items | async"
+	(selectedItem)="selectedItem($event)"
+> 
+</app-items-list>

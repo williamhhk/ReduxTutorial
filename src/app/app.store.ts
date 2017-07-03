@@ -7,6 +7,6 @@ export interface AppStore {
 	counter : number;
 }
 
-export const appStore = {
-    counter: counter
-}
+// export const appStore = {
+//     counter: counter
+// }
