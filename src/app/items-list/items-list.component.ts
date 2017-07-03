@@ -13,7 +13,7 @@ import { Item } from '../_models/item'
 export class ItemsListComponent implements OnInit {
 
     //  @Input() items = Observable.of([]);
-     @Output() selectedItem = new EventEmitter();
+    @Output() selected = new EventEmitter();
     // @Input() items: Observable<Array<Item>>;
 
     @Input() items: Item[];

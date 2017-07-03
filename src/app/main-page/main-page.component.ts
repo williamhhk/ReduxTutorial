@@ -12,11 +12,14 @@ import { Item } from '../_models/item'
 export class MainPageComponent implements OnInit {
 
   items: Observable<Array<Item>>;
+  selectedItem: Observable<Item>;
   
   constructor(
     private _store : Store <AppStore>
   ) { 
       this.items = _store.select('items');
+      this.selectedItem = _store.select('selectedItem');
+      this.selectedItem.subscribe(v => console.log(v));
     }
 
   ngOnInit() {
@@ -28,8 +31,8 @@ export class MainPageComponent implements OnInit {
     
   }
 
-  selectedItem(item)
+  selectItem(item)
   {
-    console.log(item);
+    this._store.dispatch({type: 'SELECT_ITEM', payload: item});
   }
 }
