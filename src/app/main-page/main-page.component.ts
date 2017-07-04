@@ -21,11 +21,23 @@ export class MainPageComponent implements OnInit {
     private _store : Store <AppStore>
   ) {
     
-      this.items = _store.select(state=>state.itemsState);
+      // this.items = _store.select(state=>state.itemsState);
+      
+      this.items = _store.select(state=>state.itemsState).
+      combineLatest(_store.select(state=>state.visibilityState),
+      (itemsState, visibilityState) => {
+
+        // Test out filter
+//        return itemsState.filter(client=>client.hostname == 'www.cnn.com');
+
+        // Always true
+        return itemsState.filter(visibilityState);
+      })
+      ;
       this.selectedItem = _store.select(state=>state.selectedItemState);
       this.items.subscribe(log=>console.log(log));
       this.selectedItem.subscribe(log=>console.log(log));    
-      
+
     }
 
   ngOnInit() {
