@@ -13,7 +13,6 @@ export class HostnameInputComponent implements OnInit {
   }
 
  query(text: HTMLInputElement) {
-   console.log(text.value);
    this.queryHostName.emit(text.value);
  }
 }

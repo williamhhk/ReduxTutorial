@@ -4,12 +4,21 @@
 </app-hostname-input>
 
 <app-items-list
-	[items]="items | async"
+	[itemsFromMain]="items | async"
 	(selected)="selectItem($event)"
+	(deleteSelected)="deleteItem($event)"
 > 
 </app-items-list>
 
 <app-item-info
-	[item]="selectedItem | async">Select an Item
+	[itemToBePassToItemInfo]="selectedItem | async">Select an Item
 >
 </app-item-info>
+
+<h3> Testing out async pipe without subscribe </h3>
+<div *ngIf="items1$ | async; let items1">
+  <h3> {{items1.IPAddress}} </h3>
+  <h3> {{items1.HostName}} </h3>
+  <h3> {{items1.Type}} </h3>
+</div>
+{{ items1$ |  async | json }}

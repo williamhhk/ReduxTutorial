@@ -18,10 +18,11 @@ import { DnsClientService} from './_services/dns-client.service';
 import { CounterComponent } from './counter/counter.component';
 
 // Reducers
-import { counter } from './_reducers/counter.reducer';
-import { items } from './_reducers/items.reducer';
-import {selectedItem} from './_reducers/selectedItem.reducer'
+import { counterReducer } from './_reducers/counter.reducer';
+import { itemsReducer } from './_reducers/items.reducer';
+import { selectedItemReducer} from './_reducers/selectedItem.reducer'
 import { ItemInfoComponent } from './item-info/item-info.component';
+import { appStore } from './app.store'
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ItemInfoComponent } from './item-info/item-info.component';
   imports: [
     BrowserModule,
     RouterModule.forRoot(routeConfig),
-    StoreModule.provideStore({counter, items, selectedItem}),
+    StoreModule.provideStore(appStore),
+//    StoreModule.provideStore({itemsReducer,selectedItemReducer,counterReducer}),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
     HttpModule,    
   ],
@@ -44,3 +46,5 @@ import { ItemInfoComponent } from './item-info/item-info.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

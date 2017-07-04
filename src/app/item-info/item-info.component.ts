@@ -10,9 +10,10 @@ export class ItemInfoComponent implements OnInit {
 
   selectedItem: Item;
 
-  @Input() set item(value: Item){
-      this.selectedItem = Object.assign({}, value);
-  }
+  // @Input() set itemToBePassToItemInfo(value: Item){
+  //     this.selectedItem = Object.assign({}, value);
+  // }
+  @Input()  itemToBePassToItemInfo;
 
   constructor() { }
 
