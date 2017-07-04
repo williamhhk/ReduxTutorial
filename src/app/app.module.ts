@@ -22,7 +22,8 @@ import { counterReducer } from './_reducers/counter.reducer';
 import { itemsReducer } from './_reducers/items.reducer';
 import { selectedItemReducer} from './_reducers/selectedItem.reducer'
 import { ItemInfoComponent } from './item-info/item-info.component';
-import { appStore } from './app.store'
+import { appStore } from './app.store';
+import { FilterSelectComponent } from './filter-select/filter-select.component'
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { appStore } from './app.store'
     CounterComponent,
     ItemsListComponent,
     ItemInfoComponent,
+    FilterSelectComponent,
   ],
   imports: [
     BrowserModule,

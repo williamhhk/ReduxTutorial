@@ -22,3 +22,10 @@
   <h3> {{items1.Type}} </h3>
 </div>
 {{ items1$ |  async | json }}
+
+
+<h2> Filter Demo </h2>
+<app-filter-select
+        (updateFilter)="updateFilter($event)"
+>
+</app-filter-select>

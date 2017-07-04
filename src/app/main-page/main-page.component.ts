@@ -14,6 +14,7 @@ export class MainPageComponent implements OnInit {
   items1$: Observable<any>;
   items: Observable<Array<Item>>;
   selectedItem: Observable<Item>;
+  model;
 
   constructor(
     private _dnsClientService : DnsClientService,
@@ -23,7 +24,9 @@ export class MainPageComponent implements OnInit {
       this.items = _store.select(state=>state.itemsState);
       this.selectedItem = _store.select(state=>state.selectedItemState);
       this.items.subscribe(log=>console.log(log));
-      this.selectedItem.subscribe(log=>console.log(log));    }
+      this.selectedItem.subscribe(log=>console.log(log));    
+      
+    }
 
   ngOnInit() {
   }
@@ -67,5 +70,9 @@ export class MainPageComponent implements OnInit {
   deleteItem(item)
   {
     this._store.dispatch({type: 'DELETE_CLIENT', payload: item});
+  }
+
+  updateFilter(filter){
+    console.log(filter);
   }
 }
