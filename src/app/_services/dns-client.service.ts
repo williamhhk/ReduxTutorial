@@ -13,7 +13,7 @@ export class DnsClientService {
   }
 
   getAsync(hostName : string) {
-    return this.http.get(`http://localhost:59604/api/dnsclient/${hostName}/a`);
+    return this.http.get(`http://localhost:59604/api/dnsclient/${hostName}/a`,{withCredentials : true});
   }
 
   put() {}

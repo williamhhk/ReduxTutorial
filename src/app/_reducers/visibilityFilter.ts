@@ -2,7 +2,7 @@ export const ALL = 'ALL'
 export const COMPLETE = 'COMPLETE'
 export const PENDING = 'PENDING'
 
-export const visibilityFilterReducer = (state = (todo) => true, {type}) => {
+export function visibilityFilterReducer (state = (todo) => true, {type}) : any {
 	console.log(state);
   switch(type){
     case ALL:
@@ -13,3 +13,4 @@ export const visibilityFilterReducer = (state = (todo) => true, {type}) => {
       return state;
   }
 }
+

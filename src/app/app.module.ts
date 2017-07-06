@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools'
 import { HttpModule } from '@angular/http'
+import {StoreLogMonitorModule, useLogMonitor} from '@ngrx/store-log-monitor'
 
 // Components
 import { AppComponent } from './app.component';
@@ -41,8 +42,19 @@ import { FilterSelectComponent } from './filter-select/filter-select.component'
     RouterModule.forRoot(routeConfig),
     StoreModule.provideStore(appStore),
 //    StoreModule.provideStore({itemsReducer,selectedItemReducer,counterReducer}),
-    StoreDevtoolsModule.instrumentOnlyWithExtension(),
+    StoreDevtoolsModule.instrumentStore(
+        {
+          monitor : useLogMonitor (
+            {
+              visible : false,
+              position : 'right'
+            }
+          )
+        }
+    ),
+    StoreLogMonitorModule,
     HttpModule,    
+
   ],
   providers: [DnsClientService],
   bootstrap: [AppComponent]
