@@ -28,3 +28,5 @@ monitor : useLogMonitor (
 		position : 'right'
 	}
 )
+
+https://auth0.com/blog/managing-state-in-angular-with-ngrx-store/

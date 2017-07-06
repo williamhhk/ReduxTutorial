@@ -42,17 +42,18 @@ import { FilterSelectComponent } from './filter-select/filter-select.component'
     RouterModule.forRoot(routeConfig),
     StoreModule.provideStore(appStore),
 //    StoreModule.provideStore({itemsReducer,selectedItemReducer,counterReducer}),
-    StoreDevtoolsModule.instrumentStore(
-        {
-          monitor : useLogMonitor (
-            {
-              visible : false,
-              position : 'right'
-            }
-          )
-        }
-    ),
     StoreLogMonitorModule,
+    StoreDevtoolsModule.instrumentOnlyWithExtension(),
+    // StoreDevtoolsModule.instrumentStore(
+    //     {
+    //       monitor : useLogMonitor (
+    //         {
+    //           visible : false,
+    //           position : 'right'
+    //         }
+    //       )
+    //     }
+    // ),
     HttpModule,    
 
   ],

@@ -4,6 +4,7 @@ import {Store} from '@ngrx/store'
 import {AppStore} from '../app.store'
 import { Item } from '../_models/item'
 import {DnsClientService} from '../_services/dns-client.service'
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-main-page',
@@ -16,6 +17,13 @@ export class MainPageComponent implements OnInit {
   selectedItem: Observable<Item>;
   model;
 
+
+  // itemState$: Observable<Item[]>;
+  // private itemStateSubscription: Subscription;
+  // itemTag: Item[];
+  // done = false;
+
+
   constructor(
     private _dnsClientService : DnsClientService,
     private _store : Store <AppStore>
@@ -23,6 +31,8 @@ export class MainPageComponent implements OnInit {
     
       // this.items = _store.select(state=>state.itemsState);
       
+      // this.itemState$ = _store.select(state=>state.itemsState);
+
       this.items = _store.select(state=>state.itemsState).
       combineLatest(_store.select(state=>state.visibilityState),
       (itemsState, visibilityState) => {
@@ -41,6 +51,10 @@ export class MainPageComponent implements OnInit {
     }
 
   ngOnInit() {
+
+    // this.itemStateSubscription = this.itemState$.subscribe((state) => {
+    //   this.itemTag = state;
+    // });    
   }
 
   addClient(item) {
