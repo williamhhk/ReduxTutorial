@@ -5,6 +5,8 @@ import { StoreModule } from '@ngrx/store'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools'
 import { HttpModule } from '@angular/http'
 import {StoreLogMonitorModule, useLogMonitor} from '@ngrx/store-log-monitor'
+import {MdlModule} from '@angular-mdl/core'
+
 
 // Components
 import { AppComponent } from './app.component';
@@ -55,6 +57,7 @@ import { FilterSelectComponent } from './filter-select/filter-select.component'
     //     }
     // ),
     HttpModule,    
+    MdlModule ,
 
   ],
   providers: [DnsClientService],
