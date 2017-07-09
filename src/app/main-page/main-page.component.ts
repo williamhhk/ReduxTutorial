@@ -5,6 +5,7 @@ import {AppStore} from '../app.store'
 import { Item } from '../_models/item'
 import {DnsClientService} from '../_services/dns-client.service'
 import { Subscription } from 'rxjs/Subscription';
+import {ApiMockService} from '../api-mock.service'
 
 @Component({
   selector: 'app-main-page',
@@ -26,6 +27,7 @@ export class MainPageComponent implements OnInit {
 
   constructor(
     private _dnsClientService : DnsClientService,
+    private _apiMockService : ApiMockService,
     private _store : Store <AppStore>
   ) {
     
@@ -55,6 +57,14 @@ export class MainPageComponent implements OnInit {
     // this.itemStateSubscription = this.itemState$.subscribe((state) => {
     //   this.itemTag = state;
     // });    
+    this._apiMockService.getAllTodos()
+
+    .subscribe(
+        (todos) => {
+          // map belong to Array
+          todos.map((todo) => console.log(todo))
+        }
+      );
   }
 
   addClient(item) {

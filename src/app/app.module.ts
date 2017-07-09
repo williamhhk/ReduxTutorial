@@ -28,6 +28,7 @@ import { ItemInfoComponent } from './item-info/item-info.component';
 import { appStore } from './app.store';
 import { FilterSelectComponent } from './filter-select/filter-select.component'
 
+import {ApiMockService} from './api-mock.service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +63,7 @@ import { FilterSelectComponent } from './filter-select/filter-select.component'
      FormsModule,
 
   ],
-  providers: [DnsClientService],
+  providers: [DnsClientService, ApiMockService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

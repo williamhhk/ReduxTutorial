@@ -9,5 +9,7 @@ import {DnsClientService} from './_services/dns-client.service'
 export class AppComponent {
   title = 'app';
   constructor ()  {}
- ngOnInit () {}  
+ ngOnInit () {
+   
+ }  
 }
