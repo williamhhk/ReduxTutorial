@@ -6,7 +6,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools'
 import { HttpModule } from '@angular/http'
 import {StoreLogMonitorModule, useLogMonitor} from '@ngrx/store-log-monitor'
 import {MdlModule} from '@angular-mdl/core'
-
+import { FormsModule } from '@angular/forms';
 
 // Components
 import { AppComponent } from './app.component';
@@ -38,6 +38,7 @@ import { FilterSelectComponent } from './filter-select/filter-select.component'
     ItemsListComponent,
     ItemInfoComponent,
     FilterSelectComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -58,6 +59,7 @@ import { FilterSelectComponent } from './filter-select/filter-select.component'
     // ),
     HttpModule,    
     MdlModule ,
+     FormsModule,
 
   ],
   providers: [DnsClientService],

@@ -1,2 +1,6 @@
 <input #hostName placeholder="full hostname" />
 <button (click)="query(hostName)">Query</button>
+
+
+<input placeholder="full hostname" [(ngModel)]="fdqn"/>
+<button (click)="queryByTwoWay(fdqn)">Query</button>
