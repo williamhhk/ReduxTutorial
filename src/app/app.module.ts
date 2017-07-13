@@ -28,7 +28,11 @@ import { ItemInfoComponent } from './item-info/item-info.component';
 import { appStore } from './app.store';
 import { FilterSelectComponent } from './filter-select/filter-select.component'
 
-import {ApiMockService} from './api-mock.service'
+import {ApiMockService} from './api-mock.service';
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +43,7 @@ import {ApiMockService} from './api-mock.service'
     ItemsListComponent,
     ItemInfoComponent,
     FilterSelectComponent,
+    //LazyPageComponent,
    
   ],
   imports: [
@@ -60,7 +65,7 @@ import {ApiMockService} from './api-mock.service'
     // ),
     HttpModule,    
     MdlModule ,
-     FormsModule,
+    FormsModule,
 
   ],
   providers: [DnsClientService, ApiMockService],

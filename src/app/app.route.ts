@@ -8,6 +8,9 @@ export const routeConfig: Routes = [
     { path:'about', component: AboutPageComponent },
     { path:'query', component: MainPageComponent },
     { path:'counter', component: CounterComponent },
+    // { path:'lazy', component: LazyPageComponent },
 
+     { path:'lazy', loadChildren: './lazy/lazy.module#LazyModule' },
+    
 ];
 
