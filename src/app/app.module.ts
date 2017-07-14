@@ -29,6 +29,8 @@ import { appStore } from './app.store';
 import { FilterSelectComponent } from './filter-select/filter-select.component'
 
 import {ApiMockService} from './api-mock.service';
+import { JsonServerPageComponent } from './json-server-page/json-server-page.component';
+import {ApiService} from './_services/api.service';
 
 
 
@@ -43,6 +45,7 @@ import {ApiMockService} from './api-mock.service';
     ItemsListComponent,
     ItemInfoComponent,
     FilterSelectComponent,
+    JsonServerPageComponent,
     //LazyPageComponent,
    
   ],
@@ -68,7 +71,7 @@ import {ApiMockService} from './api-mock.service';
     FormsModule,
 
   ],
-  providers: [DnsClientService, ApiMockService],
+  providers: [DnsClientService, ApiMockService, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

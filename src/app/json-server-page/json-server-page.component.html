@@ -1,0 +1,30 @@
+<ul>
+    <li 
+    *ngFor="let todo  of todos"
+    >
+       {{todo  | json}}
+    </li>
+</ul>
+
+
+
+<ul *ngFor="let todo of todos; let i = index " >
+    <li>{{todo | json }} Index {{i}}</li>
+</ul>
+
+
+<ul>
+    <li 
+    *ngFor="let todoAsync  of todosAsync | async"
+    >
+       {{todoAsync  |  json}}
+    </li>
+</ul>
+
+<ul>
+    <li 
+    *ngFor="let number  of numbers | async"
+    >
+       {{number}}
+    </li>
+</ul>
