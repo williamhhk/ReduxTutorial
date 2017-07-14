@@ -19,6 +19,12 @@ export class JsonServerPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
+    this.apiService.getAllMixed().subscribe(data=>
+    {
+      console.log(data);
+    }
+    );
     this.todosAsync = this.apiService.getAllTodos();
     this.apiService.getAllTodos().subscribe(data=>
     {
